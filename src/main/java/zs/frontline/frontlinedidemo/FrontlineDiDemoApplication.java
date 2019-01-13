@@ -15,9 +15,9 @@ public class FrontlineDiDemoApplication {
 	public static void main(String[] args) {
 		ApplicationContext ctx = SpringApplication.run(FrontlineDiDemoApplication.class, args);
 
-		MyController controller = ctx.getBean(MyController.class);
-
+		MyController controller = (MyController) ctx.getBean("myController");
 		System.out.println(controller.hello());
+
 		System.out.println(ctx.getBean(PropertyInjectedController.class).sayHello());
 		System.out.println(ctx.getBean(GetterInjectedController.class).sayHello());
 		System.out.println(ctx.getBean(ConstructorInjectedController.class).sayHello());
