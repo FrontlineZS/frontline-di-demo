@@ -11,19 +11,19 @@ import zs.frontline.frontlinedidemo.services.SomeClassExtendsAbstract;
 
 @SpringBootApplication
 public class FrontlineDiDemoApplication {
-
-	public static void main(String[] args) {
-		ApplicationContext ctx = SpringApplication.run(FrontlineDiDemoApplication.class, args);
-
-		MyController controller = (MyController) ctx.getBean("myController");
-		System.out.println(controller.hello());
-
-		System.out.println(ctx.getBean(PropertyInjectedController.class).sayHello());
-		System.out.println(ctx.getBean(GetterInjectedController.class).sayHello());
-		System.out.println(ctx.getBean(ConstructorInjectedController.class).sayHello());
-
-		SomeClassExtendsAbstract someClassExtendsAbstract = ctx.getBean(SomeClassExtendsAbstract.class);
-		System.out.println(someClassExtendsAbstract.add(2, 2));
-	}
+    
+    public static void main(String[] args) {
+        ApplicationContext ctx = SpringApplication.run(FrontlineDiDemoApplication.class, args);
+        
+        MyController controller = (MyController) ctx.getBean("myController");
+        System.out.println(controller.hello());
+        
+        System.out.println(ctx.getBean(PropertyInjectedController.class).sayHello());
+        System.out.println(ctx.getBean(GetterInjectedController.class).sayHello());
+        System.out.println(ctx.getBean(ConstructorInjectedController.class).sayHello());
+        
+        SomeClassExtendsAbstract someClassExtendsAbstract = ctx.getBean(SomeClassExtendsAbstract.class);
+        System.out.println(someClassExtendsAbstract.add(2, 2));
+    }
 }
 
